@@ -1,16 +1,23 @@
-import { type NextPage } from "next";
-import Head from "next/head";
-import Link from "next/link";
-import HomePage from './Home/HomePage';
-import { Navbar } from '~/components';
+import useSWR from 'swr'
+import type { Fetcher } from 'swr'
+import { ChampionList } from '~/components';
+import { kChampionsUrl } from '~/const/api';
+import type { IChampionResponse } from '~/interfaces';
 
-const Home: NextPage = () => {
+const fetcher: Fetcher<IChampionResponse> = (input: RequestInfo | URL, init?: RequestInit | undefined) => fetch(input, init).then(res => res.json())
+
+const Home = () => {
+    const { data, error, isLoading } = useSWR<IChampionResponse, Error>(kChampionsUrl, fetcher)
+
+    const champions = data?.data ?? {}
+
+    if (isLoading)
+        return <p>Loading...</p>
     return (
-        <>
-            <Navbar />
-            <HomePage />
-        </>
-    );
+        <main>
+            <ChampionList isLoading={isLoading} error={error} champions={champions}/>
+        </main>
+    )
 };
 
-export default Home;
+export default Home
