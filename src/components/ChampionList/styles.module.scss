@@ -1,0 +1,10 @@
+.champion-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    ::after {
+        content: "";
+        flex: auto;
+    }
+}

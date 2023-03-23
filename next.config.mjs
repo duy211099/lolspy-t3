@@ -18,5 +18,15 @@ const config = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: '**.leagueoflegends.com',
+        // port: '',
+        // pathname: '/account123/**',
+      },
+    ],
+  },
 };
 export default config;

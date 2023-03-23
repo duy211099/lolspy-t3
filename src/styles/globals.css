@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.main-content {
+    width: 1140px;
+    max-width: calc(100% - 24px);
+    margin: 0 auto;
+}
