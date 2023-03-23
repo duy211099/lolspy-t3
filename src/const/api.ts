@@ -1,4 +1,4 @@
-export const kDDragonURL = "http://ddragon.leagueoflegends.com/cdn";
+export const kDDragonURL = "https://ddragon.leagueoflegends.com/cdn";
 export const kVersion = "13.6.1";
 export const kLanguage = "en_US";
 
