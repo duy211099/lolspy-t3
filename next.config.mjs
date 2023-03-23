@@ -21,7 +21,7 @@ const config = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
+        protocol: 'https',
         hostname: '**.leagueoflegends.com',
         // port: '',
         // pathname: '/account123/**',
